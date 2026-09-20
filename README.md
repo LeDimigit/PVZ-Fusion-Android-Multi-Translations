@@ -69,9 +69,9 @@ PVZ-Fusion-Android-Multi-Translations/
 ## 🔄 Updating from another version
 
 ​If you are updating from the original Chinese or the English translation APK, follow these steps to keep your progress:
-​1. Backup your save files:
-* Navigate to `Android/data/com.LanPiaPiao.PlantsVsZombiesRH/files` (To access this directory on Android, connect your phone to a PC, or use a file manager like **RS File Manager**, **Files** (by Marc apps & software), or **ZArchiver** combined with Shizuku).
-​* Copy all contents to a backup folder, excluding the `il2cpp` folder.
-​2. Uninstall your current version of the game.
-​3. Install this translated version and launch it once to generate the app folders.
-​4. Close the game, then restore your backup by copying your saved files back into `Android/data/com.LanPiaPiao.PlantsVsZombiesRH/files`.
+1. Backup your save files:
+   * Navigate to `Android/data/com.LanPiaPiao.PlantsVsZombiesRH/files` (To access this directory on Android, connect your phone to a PC, or use a file manager like **RS File Manager**, **Files** (by Marc apps & software), or **ZArchiver** combined with Shizuku).
+   * Copy all contents to a backup folder, excluding the `il2cpp` folder.
+2. Uninstall your current version of the game.
+3. Install this translated version and launch it once to generate the app folders.
+4. Close the game, then restore your backup by copying your saved files back into `Android/data/com.LanPiaPiao.PlantsVsZombiesRH/files`.
