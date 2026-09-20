@@ -48,7 +48,7 @@ PVZ-Fusion-Android-Multi-Translations/
 ├── PvZ_Fusion_Translator/
 │   └── [subdirectories...]
 ├── build_apk.py
-├── built_all.bat
+├── build_all.bat
 ├── data.unity3d
 ├── global-metadata.dat
 ├── patch_data.unity3d.py
@@ -57,7 +57,7 @@ PVZ-Fusion-Android-Multi-Translations/
 ├── repack.py
 └── uber-apk-signer.jar
 ```
-5. Run `built_all.bat`
+5. Run `build_all.bat`
 
 ## ​🚀 Installation
 
