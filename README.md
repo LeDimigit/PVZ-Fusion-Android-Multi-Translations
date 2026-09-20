@@ -60,12 +60,13 @@ PVZ-Fusion-Android-Multi-Translations/
 5. Run `built_all.bat`
 
 ## ​🚀 Installation
-​1. Go to the Latest Release.
-​2. Go below to the Assets section (you might need to click the arrow next to "Assets" to expand it).
-​3. Click on the file name corresponding to the language you want to download.
-​4. Open the downloaded file on your Android device and press Install.
 
-​## 🔄 Updating from another version
+1. Go to the Latest Release.
+2. Go below to the Assets section (you might need to click the arrow next to "Assets" to expand it).
+3. Click on the file name corresponding to the language you want to download.
+4. Open the downloaded file on your Android device and press Install.
+
+## 🔄 Updating from another version
 
 ​If you are updating from the original Chinese or the English translation APK, follow these steps to keep your progress:
 ​1. Backup your save files:
