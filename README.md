@@ -58,3 +58,19 @@ PVZ-Fusion-Android-Multi-Translations/
 └── uber-apk-signer.jar
 ```
 5. Run `built_all.bat`
+
+## ​🚀 Installation
+​1. Go to the Latest Release.
+​2. Go below to the Assets section (you might need to click the arrow next to "Assets" to expand it).
+​3. Click on the file name corresponding to the language you want to download.
+​4. Open the downloaded file on your Android device and press Install.
+
+​## 🔄 Updating from another version
+
+​If you are updating from the original Chinese or the English translation APK, follow these steps to keep your progress:
+​1. Backup your save files:
+* Navigate to `Android/data/com.LanPiaPiao.PlantsVsZombiesRH/files` (To access this directory on Android, connect your phone to a PC, or use a file manager like **RS File Manager**, **Files** (by Marc apps & software), or **ZArchiver** combined with Shizuku).
+​* Copy all contents to a backup folder, excluding the `il2cpp` folder.
+​2. Uninstall your current version of the game.
+​3. Install this translated version and launch it once to generate the app folders.
+​4. Close the game, then restore your backup by copying your saved files back into `Android/data/com.LanPiaPiao.PlantsVsZombiesRH/files`.
