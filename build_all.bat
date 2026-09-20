@@ -30,6 +30,11 @@ for /d %%D in ("%LOCALIZATION_DIR%\*") do (
     )
 )
 
+:: Global Python cache cleanup at the end
+for /d /r %%P in (__pycache__) do (
+    if exist "%%P" rmdir /s /q "%%P"
+)
+
 echo.
 echo 🎉 ALL LANGUAGES HAVE BEEN PROCESSED SUCCESSFULLY!
 echo.
@@ -80,9 +85,23 @@ if defined KS_PATH if exist "%KS_PATH%" (
 )
 if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 
-:: Cleanup: remove unsigned APK from root directory
+echo.
+echo ==================================================
+echo ▶ Step 5: Cleaning up build artifacts (%LANG%)
+echo ==================================================
+:: Remove unsigned APK from root directory
 if exist "pvzrh-%LANG_LOWER%.apk" (
     del /f /q "pvzrh-%LANG_LOWER%.apk"
+)
+
+:: Remove working directory
+if exist "work" (
+    rmdir /s /q "work"
+)
+
+:: Remove Python cache folders
+for /d /r %%P in (__pycache__) do (
+    if exist "%%P" rmdir /s /q "%%P"
 )
 
 exit /b 0
