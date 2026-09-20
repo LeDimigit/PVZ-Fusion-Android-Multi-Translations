@@ -8,7 +8,7 @@ This repository intentionally contains no APKs, game binaries, extracted assets,
 
 This build stands entirely on the work of others. **Please visit and support them:**
 
-| Role | Who | Link |
+| Role | Author | Link |
 |---|---|---|
 | **Original game** (*PvZ Fusion* / 植物大战僵尸融合版) | **LanPiaoPiao (蓝飘飘fly)** & team | https://space.bilibili.com/3546619314178489 |
 | **Translations** | **PVZF‑Translation team** | https://github.com/Teyliu/PVZF-Translation · Discord: https://discord.gg/DPAC5ZVJ8T |
