@@ -18,14 +18,15 @@ for arg in sys.argv:
 
 APK = r"./pvzrh.apk"
 MOD = r"./PvZ_Fusion_Translator"
+TRANS = r"./Translations"
 DIR_EN = os.path.join(MOD, "Localization", "English")
 DIR_LANG = os.path.join(MOD, "Localization", LANG_NAME)
+DIR_LANG2 = os.path.join(TRANS, LANG_NAME)
 OUT = r"./work/data.unity3d.v2"
 
 WITH_TEXTURES = "--textures" in sys.argv
 SIZE_TAG = re.compile(r'</?size[^>]*>')
 ALMANAC_SIZE = 12
-
 
 def LJ(p):
     try:
@@ -89,6 +90,16 @@ def build_master():
         with open(cl_lang, encoding="utf-8") as f:
             lang_cl = f.read()
         add(en_cl, lang_cl)
+        
+    # --- Interface & UI Translations (Direct EN -> Target) ---
+    # Automatically iterate over all .json files in DIR_LANG2
+    if os.path.exists(DIR_LANG2):
+        for file_name in os.listdir(DIR_LANG2):
+            if file_name.endswith(".json"):
+                json_path = os.path.join(DIR_LANG2, file_name)
+                ui_data = LJ(json_path) or {}
+                for en_text, target_text in ui_data.items():
+                    add(en_text, target_text)
 
     return en_to_lang
 
