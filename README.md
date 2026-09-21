@@ -64,6 +64,8 @@ Before running the scripts, make sure you have the following ready:
 PVZ-Fusion-Android-Multi-Translations/
 ├── PvZ_Fusion_Translator/
 │   └── [subdirectories...]
+├── Translations/
+│   └── [subdirectories...]
 ├── build_apk.py
 ├── build_all.bat
 ├── data.unity3d
