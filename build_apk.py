@@ -18,7 +18,7 @@ APK = r"./pvzrh.apk"                 # English APK
 BUNDLE = r"./work/data.unity3d.v2"         # from patch_bundle_v2.py
 META = r"./work/global-metadata.v2.dat"    # from patch_metadata_v2.py
 
-# Génération dynamique du nom d'APK selon la langue (ex: ./pvzrh-french.apk)
+# Dynamically generate the APK name based on the language (e.g., ./pvzrh-french.apk)
 OUT_APK = f"./pvzrh-{LANG_NAME.lower()}.apk"
 
 BOOT_ENTRY = "assets/bin/Data/boot.config"
