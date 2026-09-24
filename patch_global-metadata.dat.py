@@ -132,14 +132,11 @@ def build_dict():
                     en_to_lang[en_full] = lang_full
                     
     # --- Interface & UI Translations (Direct EN -> Target) ---
-    # Automatically iterate over all .json files in DIR_LANG2
-    if os.path.exists(DIR_LANG2):
-        for file_name in os.listdir(DIR_LANG2):
-            if file_name.endswith(".json"):
-                json_path = os.path.join(DIR_LANG2, file_name)
-                ui_data = LJ(json_path) or {}
-                for en_text, target_text in ui_data.items():
-                    add(en_text, target_text)
+    json_path = os.path.join(DIR_LANG2, "metadata.json")
+    if os.path.isfile(json_path):
+        ui_data = LJ(json_path) or {}
+        for en_text, target_text in ui_data.items():
+            add(en_text, target_text)
 
     return en_to_lang
 
