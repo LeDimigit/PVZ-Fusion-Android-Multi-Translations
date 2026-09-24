@@ -4,5 +4,7 @@
   "Adventure Mode: Snow | Level {0}": "Mode aventure : Extra | Niveau : {0}",
   "Adventure Realm: Level {0}": "Royaume d'aventure : Niveau {0}",
   "Level": "Niveau",
-  "Level {0}": "Niveau : {0}"
+  "Level {0}": "Niveau : {0}",
+  "Disable Transitions": "Animations désactivées",
+  "Difficulty: {0}": "Difficulté: {0}"
 }
