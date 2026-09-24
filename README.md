@@ -72,6 +72,7 @@ PVZ-Fusion-Android-Multi-Translations/
 ├── global-metadata.dat
 ├── patch_data.unity3d.py
 ├── patch_global-metadata.dat.py
+├── protected-identifiers.json
 ├── pvzrh.apk
 ├── repack.py
 └── uber-apk-signer.jar
