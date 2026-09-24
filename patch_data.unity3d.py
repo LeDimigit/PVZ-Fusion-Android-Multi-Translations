@@ -21,7 +21,7 @@ MOD = r"./PvZ_Fusion_Translator"
 TRANS = r"./Translations"
 DIR_EN = os.path.join(MOD, "Localization", "English")
 DIR_LANG = os.path.join(MOD, "Localization", LANG_NAME)
-DIR_LANG2 = os.path.join(TRANS, LANG_NAME)
+DIR_LANG2 = os.path.join(TRANS, LANG_NAME, "data.unity3d")
 OUT = r"./work/data.unity3d.v2"
 
 WITH_TEXTURES = "--textures" in sys.argv
