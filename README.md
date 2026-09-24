@@ -27,7 +27,7 @@ https://github.com/Teyliu/PVZF-Translation and their Discord.**
 
 ## ​🚀 Installation
 
-1. Go to the Latest Release.
+1. Go to the [Latest Release](https://github.com/LeDimigit/PVZ-Fusion-Android-Multi-Translations/releases/latest).
 2. Go below to the Assets section (you might need to click the arrow next to "Assets" to expand it).
 3. Click on the file name corresponding to the language you want to download.
 4. Open the downloaded file on your Android device and press Install.
