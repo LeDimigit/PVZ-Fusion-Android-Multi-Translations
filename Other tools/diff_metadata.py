@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
     if len(args) < 2:
-        print("Usage: python build_protection.py <original_cn.dat> <patched_en.dat>")
+        print("Usage: python diff_metadata.py <original_cn.dat> <patched_en.dat>")
         sys.exit(1)
     
     main(args[0], args[1], OUT_PATH)
