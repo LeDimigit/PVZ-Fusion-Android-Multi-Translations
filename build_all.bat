@@ -78,7 +78,7 @@ echo ==================================================
 echo ▶ Step 4: Signing APK (%LANG%)
 echo ==================================================
 if defined KS_PATH if exist "%KS_PATH%" (
-    java -jar uber-apk-signer.jar -a "pvzrh-%LANG_LOWER%.apk" --ks "%KS_PATH%" --ksAlias "%KS_ALIAS%" --ksPass "%KS_PASS%" --keyPass "%KEY_PASS%" --skipZipAlign -o out/
+    java -jar uber-apk-signer.jar -a "pvzrh-%LANG_LOWER%.apk" --ks "%KS_PATH%" --ksAlias "%KS_ALIAS%" --ksPass "%KS_PASS%" --ksKeyPass "%KEY_PASS%" --skipZipAlign -o out/
 ) else (
     echo ⚠️ Private key not found or not specified. Using default debug key...
     java -jar uber-apk-signer.jar -a "pvzrh-%LANG_LOWER%.apk" --skipZipAlign -o out/
