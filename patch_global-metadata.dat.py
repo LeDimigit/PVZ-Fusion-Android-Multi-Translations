@@ -95,6 +95,11 @@ def build_dict():
     ts_en = LJ(os.path.join(DIR_EN, "Strings", "translation_strings.json")) or {}
     ts_lang = LJ(os.path.join(DIR_LANG, "Strings", "translation_strings.json")) or {}
     add_pivot(ts_en, ts_lang)
+    
+    # 1b. Translation Regexs
+    tr_en = LJ(os.path.join(DIR_EN, "Strings", "translation_regexs.json")) or {}
+    tr_lang = LJ(os.path.join(DIR_LANG, "Strings", "translation_regexs.json")) or {}
+    add_pivot(tr_en, tr_lang)
 
     # 2. Tips
     for f in ("tips_fs", "tips_iz"):
