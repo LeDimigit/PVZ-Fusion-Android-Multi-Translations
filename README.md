@@ -1,15 +1,15 @@
 # PVZ-Fusion-Android-Multi-Translations
 
 ​This is an unofficial Android build of Plants vs. Zombies: Fusion, available in the following languages:
-- 🇵🇭 Pilipino
-- 🇫🇷 Français
-- 🇩🇪 Deutsch
 - 🇮🇩 Bahasa Indonesia
-- 🇮🇹 Italiano
 - 🇮🇩 / 🇯🇻 Basa Jawa
+- 🇩🇪 Deutsch
+- 🇪🇸 Español
+- 🇫🇷 Français
+- 🇮🇹 Italiano
+- 🇵🇭 Pilipino
 - 🇵🇱 Polski
 - 🇵🇹 / 🇧🇷 Português
-- 🇪🇸 Español
 - 🇻🇳 Tiếng Việt
 
 **The translations come from [Teyliu/PVZF-Translation](https://github.com/Teyliu/PVZF-Translation). I am not the author of these translations, I am simply refining and improving the French translation based on this source.**
