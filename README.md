@@ -1,6 +1,18 @@
 # PVZ-Fusion-Android-Multi-Translations
 
-This is an unofficial Android build of *Plants vs. Zombies: Fusion*, available in the following languages: Filipino, French, German, Indonesian, Italian, Javanese, Polish, Portuguese, Spanish, and Vietnamese.
+​This is an unofficial Android build of Plants vs. Zombies: Fusion, available in the following languages:
+- 🇵🇭 Pilipino
+- 🇫🇷 Français
+- 🇩🇪 Deutsch
+- 🇮🇩 Bahasa Indonesia
+- 🇮🇹 Italiano
+- 🇮🇩 / 🇯🇻 Basa Jawa
+- 🇵🇱 Polski
+- 🇵🇹 / 🇧🇷 Português
+- 🇪🇸 Español
+- 🇻🇳 Tiếng Việt
+
+**The translations come from [Teyliu/PVZF-Translation](https://github.com/Teyliu/PVZF-Translation). I am not the author of these translations, I am simply refining and improving the French translation based on this source.**
 
 This repository intentionally contains no APKs, game binaries, extracted assets, signing keys, or bundled translation data. Supply legally obtained game files locally and clone the translation project separately.
 
