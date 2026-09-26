@@ -4,5 +4,9 @@
   "Adventure Realm: Level {0}": "Royaume d'aventure : Niveau {0}",
   "Level": "Niveau",
   "Disable Transitions": "Animations désactivées",
-  "Current Zoom: {0}": "Niveau de zoom : {0}"
+  "Current Zoom: 5": "Niveau de zoom : 5",
+  "Current Zoom: 6": "Niveau de zoom : 6",
+  "Current Zoom: 7": "Niveau de zoom : 7",
+  "Current Zoom: {0}": "Niveau de zoom : {0}",
+  "<size=75%>Game Speed: ×{0:F2}</size>":"<size=75%>Vitesse de jeu : ×{0:F2}</size>"
 }
