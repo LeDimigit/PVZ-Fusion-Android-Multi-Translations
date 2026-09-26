@@ -63,8 +63,8 @@ content](https://github.com/Teyliu/PVZF-Translation) — no runtime mod loader.
 Before running the scripts, make sure you have the following ready:
  * Python 3 with [UnityPy](https://github.com/K0lb3/UnityPy) installed (`pip install UnityPy`)
  * Java Runtime Environment (JRE) (required for APK signing)
- * [uber-apk-signer](https://github.com/patrickfav/uber-apk-signer) (download the .jar file and place it in your working directory)
- * English APK: Download the base English APK from [silvershadowkat/pvzf-android-translation](https://github.com/silvershadowkat/pvzf-android-translation)
+ * [uber-apk-signer](https://github.com/patrickfav/uber-apk-signer/releases/latest) (download the .jar file and place it in your working directory)
+ * English APK: Download the base English APK from [silvershadowkat/pvzf-android-translation](https://github.com/silvershadowkat/pvzf-android-translation/releases/latest)
  * Translation Assets: Download or clone the `PvZ_Fusion_Translator` folder from [Teyliu/PVZF-Translation](https://github.com/Teyliu/PVZF-Translation)
 
 ### Pipeline:
