@@ -70,7 +70,7 @@ for /l %%i in (1,1,%LANG_COUNT%) do (
 )
 echo.
 set "LANG_SELECTION="
-set /p "LANG_SELECTION=Enter number(s) separated by commas or spaces ^(e.g. 1,3,5^), or 0 for all: "
+set /p "LANG_SELECTION=Enter number(s) separated by commas or spaces (e.g. 1,3,5), or 0 for all: "
 
 if not defined LANG_SELECTION goto select_languages
 
@@ -184,6 +184,19 @@ if "%SIGN_MODE%"=="KEY" (
     java -jar uber-apk-signer.jar -a "pvzrh-%LANG_LOWER%.apk" --skipZipAlign -o out/
 )
 if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
+
+:: Remove the .idsig file produced by the signer (not needed)
+del /f /q "out\pvzrh-%LANG_LOWER%*.idsig" >nul 2>nul
+
+:: Clean up the "Signed" wording from the output APK filename
+:: (keeps "debug" when signed with the debug key, only drops "signed"/"Signed")
+set "SIGNED_APK="
+for %%O in ("out\pvzrh-%LANG_LOWER%*.apk") do set "SIGNED_APK=%%~nxO"
+if defined SIGNED_APK (
+    set "CLEAN_APK=!SIGNED_APK:Signed=!"
+    set "CLEAN_APK=!CLEAN_APK:-.apk=.apk!"
+    if not "!CLEAN_APK!"=="!SIGNED_APK!" ren "out\!SIGNED_APK!" "!CLEAN_APK!"
+)
 
 echo.
 echo ==================================================
