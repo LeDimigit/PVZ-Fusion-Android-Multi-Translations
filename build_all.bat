@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 :: Force UTF-8 encoding for accents and emojis
 chcp 65001 > nul
 
@@ -42,15 +43,76 @@ if not exist "%LOCALIZATION_DIR%" (
     goto error
 )
 
-:: Iterate through each subfolder in the Localization directory
+:: ==================================================
+:: Build the list of available languages (skip English)
+:: ==================================================
+set "LANG_COUNT=0"
 for /d %%D in ("%LOCALIZATION_DIR%\*") do (
-    set "LANG_NAME=%%~nxD"
-    
-    :: Skip the English folder
     if /i not "%%~nxD"=="English" (
-        call :process_language "%%~nxD"
-        if errorlevel 1 goto error
+        set /a LANG_COUNT+=1
+        set "LANG_!LANG_COUNT!=%%~nxD"
     )
+)
+
+if %LANG_COUNT%==0 (
+    echo ❌ No language folder found in "%LOCALIZATION_DIR%" ^(other than English^)!
+    goto error
+)
+
+:select_languages
+echo.
+echo ==================================================
+echo 🌐 Language selection
+echo ==================================================
+echo   0. ALL languages
+for /l %%i in (1,1,%LANG_COUNT%) do (
+    echo   %%i. !LANG_%%i!
+)
+echo.
+set "LANG_SELECTION="
+set /p "LANG_SELECTION=Enter number(s) separated by commas or spaces ^(e.g. 1,3,5^), or 0 for all: "
+
+if not defined LANG_SELECTION goto select_languages
+
+set "LANG_SELECTION=%LANG_SELECTION:,= %"
+set "SELECTED_LANGS="
+set "ALL_SELECTED=0"
+set "BAD_SELECTION=0"
+
+for %%N in (%LANG_SELECTION%) do (
+    if "%%N"=="0" (
+        set "ALL_SELECTED=1"
+    ) else (
+        set "PICK=!LANG_%%N!"
+        if not defined PICK (
+            echo ⚠️ Invalid choice: %%N
+            set "BAD_SELECTION=1"
+        ) else (
+            echo !SELECTED_LANGS! | find /i " !PICK! " > nul
+            if errorlevel 1 set "SELECTED_LANGS=!SELECTED_LANGS! !PICK!"
+        )
+    )
+)
+
+if "%BAD_SELECTION%"=="1" goto select_languages
+
+if "%ALL_SELECTED%"=="1" (
+    set "SELECTED_LANGS="
+    for /l %%i in (1,1,%LANG_COUNT%) do set "SELECTED_LANGS=!SELECTED_LANGS! !LANG_%%i!"
+)
+
+if not defined SELECTED_LANGS (
+    echo ⚠️ No language selected.
+    goto select_languages
+)
+
+echo.
+echo ✅ Selected language^(s^):!SELECTED_LANGS!
+
+:: Iterate through the selected languages
+for %%L in (%SELECTED_LANGS%) do (
+    call :process_language "%%L"
+    if errorlevel 1 goto error
 )
 
 :: Global Python cache cleanup at the end
