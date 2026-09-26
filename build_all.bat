@@ -13,6 +13,29 @@ set "KS_ALIAS=your_key_alias"
 set "KS_PASS=your_keystore_password"
 set "KEY_PASS=your_key_password"
 
+:: Extract just the keystore file name (not the full path) for display
+for %%F in ("%KS_PATH%") do set "KS_FILENAME=%%~nxF"
+
+set "SIGN_MODE=DEBUG"
+
+if not defined KS_PATH goto :key_not_found
+if not exist "%KS_PATH%" goto :key_not_found
+goto :ask_mode
+
+:key_not_found
+
+echo.
+echo ⚠️ Key not found ^(KS_PATH empty or missing^): signing will use the debug key.
+goto :mode_chosen
+
+:ask_mode
+
+choice /c 01 /n /m "Sign with key '%KS_FILENAME%' (0) or with the debug key (1)? "
+if errorlevel 2 set "SIGN_MODE=DEBUG"
+if errorlevel 1 if not errorlevel 2 set "SIGN_MODE=KEY"
+
+:mode_chosen
+
 :: Check if localization directory exists
 if not exist "%LOCALIZATION_DIR%" (
     echo ❌ The directory "%LOCALIZATION_DIR%" does not exist!
@@ -77,10 +100,25 @@ echo.
 echo ==================================================
 echo ▶ Step 4: Signing APK (%LANG%)
 echo ==================================================
-if defined KS_PATH if exist "%KS_PATH%" (
+:try_sign
+if "%SIGN_MODE%"=="KEY" (
     java -jar uber-apk-signer.jar -a "pvzrh-%LANG_LOWER%.apk" --ks "%KS_PATH%" --ksAlias "%KS_ALIAS%" --ksPass "%KS_PASS%" --ksKeyPass "%KEY_PASS%" --skipZipAlign -o out/
+    if errorlevel 1 (
+        echo.
+        echo ⚠️ Signing with your key failed ^(wrong password or another error^).
+        choice /c 01 /n /m "Retry with a new password (0) or switch to the debug key for good (1)? "
+        if errorlevel 2 (
+            set "SIGN_MODE=DEBUG"
+            goto try_sign
+        )
+        if errorlevel 1 if not errorlevel 2 (
+            set /p "KS_PASS=New keystore password: "
+            set /p "KEY_PASS=New key password: "
+            goto try_sign
+        )
+    )
 ) else (
-    echo ⚠️ Private key not found or not specified. Using default debug key...
+    echo ⚠️ Using the default debug key...
     java -jar uber-apk-signer.jar -a "pvzrh-%LANG_LOWER%.apk" --skipZipAlign -o out/
 )
 if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
