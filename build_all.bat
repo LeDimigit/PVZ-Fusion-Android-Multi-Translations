@@ -191,11 +191,11 @@ del /f /q "out\pvzrh-%LANG_LOWER%*.idsig" >nul 2>nul
 :: Clean up the "Signed" wording from the output APK filename
 :: (keeps "debug" when signed with the debug key, only drops "signed"/"Signed")
 set "SIGNED_APK="
-for %%O in ("out\pvzrh-%LANG_LOWER%*.apk") do set "SIGNED_APK=%%~nxO"
+for %%O in ("out\pvzrh-%LANG_LOWER%*igned.apk") do set "SIGNED_APK=%%~nxO"
 if defined SIGNED_APK (
     set "CLEAN_APK=!SIGNED_APK:Signed=!"
     set "CLEAN_APK=!CLEAN_APK:-.apk=.apk!"
-    if not "!CLEAN_APK!"=="!SIGNED_APK!" ren "out\!SIGNED_APK!" "!CLEAN_APK!"
+    if not "!CLEAN_APK!"=="!SIGNED_APK!" move /y "out\!SIGNED_APK!" "out\!CLEAN_APK!" >nul
 )
 
 echo.
